@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Fio</title>
+  <meta name="description" content="Fio é um assistente de IA que resume documentos longos e mostra a página de onde saiu cada resposta. Projeto de demonstração.">
+  <meta name="theme-color" content="#EDF0F4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="nav">
+    <div class="wrap nav__in">
+      <a class="logo" href="#topo" aria-label="Fio, início">fio</a>
+      <nav aria-label="Principal">
+        <ul class="nav__links">
+          <li><a href="#como">Como funciona</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#teste">Demonstração</a></li>
+          <li><a href="#perguntas">Perguntas</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--solid btn--sm" href="#teste">Experimentar</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero wrap" id="topo">
+      <div class="hero__copy">
+        <h1 class="display">Leia menos.<br>Entenda tudo.</h1>
+        <p class="lead">O Fio resume contratos, relatórios e artigos, e responde com a página de onde tirou cada resposta.</p>
+        <div class="hero__cta">
+          <a class="btn btn--solid" href="#teste">Experimentar</a>
+          <a class="btn btn--line" href="#como">Como funciona</a>
+        </div>
+      </div>
+      <figure class="hero__art">
+        <canvas id="hero-page" role="img" aria-label="Página de texto desenhada com blocos de pixel. Linhas ficam azuis conforme o mouse passa e uma varredura percorre o documento."></canvas>
+        <figcaption>Passe o mouse sobre a página.</figcaption>
+      </figure>
+    </section>
+
+    <section class="logos wrap" aria-label="Formatos aceitos">
+      <p class="logos__t">Lê o que você já tem</p>
+      <ul class="logos__l">
+        <li>PDF</li><li>DOCX</li><li>TXT</li><li>Markdown</li><li>E-mail</li>
+      </ul>
+    </section>
+
+    <section class="stack" id="como" aria-labelledby="como-t">
+      <h2 id="como-t" class="sr">Como funciona</h2>
+
+      <article class="stack__card stack__card--paper">
+        <div class="stack__in wrap">
+          <div class="stack__txt">
+            <h3 class="h2 display">Envie o arquivo</h3>
+            <p>Arraste um PDF ou cole o texto. O Fio divide o documento em trechos e guarda a página de cada um.</p>
+          </div>
+          <canvas class="px" data-bitmap="doc" role="img" aria-label="Ícone de documento em pixels"></canvas>
+        </div>
+      </article>
+
+      <article class="stack__card stack__card--night">
+        <div class="stack__in wrap">
+          <div class="stack__txt">
+            <h3 class="h2 display">Pergunte do seu jeito</h3>
+            <p>Escreva como falaria com um colega. Pergunte prazos, valores, riscos ou peça um resumo de uma seção.</p>
+          </div>
+          <canvas class="px" data-bitmap="chat" role="img" aria-label="Ícone de balão de conversa em pixels"></canvas>
+        </div>
+      </article>
+
+      <article class="stack__card stack__card--accent">
+        <div class="stack__in wrap">
+          <div class="stack__txt">
+            <h3 class="h2 display">Confira a fonte</h3>
+            <p>Cada resposta traz a cláusula e a página. Um clique leva ao trecho original, sem precisar confiar às cegas.</p>
+          </div>
+          <canvas class="px" data-bitmap="cite" role="img" aria-label="Ícone de documento com uma linha destacada, em pixels"></canvas>
+        </div>
+      </article>
+    </section>
+
+    <section class="features wrap" id="recursos" aria-labelledby="rec-t">
+      <h2 id="rec-t" class="h2 display">Feito para documentos que ninguém quer ler duas vezes</h2>
+      <div class="bento">
+        <article class="tile tile--night tile--a">
+          <h3>Toda resposta aponta a página</h3>
+          <p>O trecho usado aparece destacado no original. Se o Fio não achar a resposta no texto, ele diz isso em vez de inventar.</p>
+          <canvas class="px px--sm" data-bitmap="cite" aria-hidden="true"></canvas>
+        </article>
+        <article class="tile tile--accent tile--b">
+          <h3>Documentos longos</h3>
+          <p>Contratos e relatórios extensos sem perder o fio entre o começo e o fim.</p>
+        </article>
+        <article class="tile tile--dots tile--c">
+          <h3>Perguntas em português</h3>
+          <p>Pergunte em português e leia fontes em inglês, com a citação no idioma original.</p>
+        </article>
+        <article class="tile tile--paper tile--d">
+          <h3>Seus arquivos, sob controle</h3>
+          <p>Cada arquivo pode ser apagado da sua conta quando você quiser.</p>
+        </article>
+        <article class="tile tile--night2 tile--e">
+          <h3>Leve o resumo embora</h3>
+          <p>Copie para o seu bloco de notas ou exporte em Markdown.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="demo" id="teste" aria-labelledby="teste-t">
+      <div class="wrap">
+        <h2 id="teste-t" class="h2 display">Teste com um documento de exemplo</h2>
+        <p class="demo__note" id="demo-nota">Demonstração com respostas pré-escritas. Nenhum arquivo é enviado e não há IA rodando nesta página.</p>
+
+        <div class="demo__grid">
+          <div class="demo__ctl">
+            <h3 class="label" id="lbl-doc">Documento</h3>
+            <div class="chips" role="group" aria-labelledby="lbl-doc" id="docs"></div>
+            <h3 class="label" id="lbl-q">Pergunta</h3>
+            <div class="qs" role="group" aria-labelledby="lbl-q" id="perguntas-lista"></div>
+          </div>
+
+          <div class="demo__out" aria-live="polite">
+            <p class="demo__doc" id="doc-titulo"></p>
+            <p class="demo__ans" id="resposta"></p>
+            <p class="demo__src" id="fonte" hidden></p>
+          </div>
+        </div>
+
+        <div class="real" id="real" hidden>
+          <h3 class="label">Modo real: seu texto, no seu computador</h3>
+          <div class="real__grid">
+            <form class="real__form" id="real-form">
+              <label class="real__lbl" for="real-texto">Cole o texto ou envie um arquivo .txt ou .md</label>
+              <textarea id="real-texto" rows="9" maxlength="200000" placeholder="Cole aqui o conteúdo do documento"></textarea>
+              <input type="file" id="real-arq" accept=".txt,.md,text/plain,text/markdown" aria-label="Enviar arquivo de texto">
+              <label class="real__lbl" for="real-q">Pergunta</label>
+              <input type="text" id="real-q" maxlength="500" placeholder="Ex.: Qual é o prazo do contrato?" autocomplete="off">
+              <button class="btn btn--solid" type="submit" id="real-btn">Perguntar</button>
+            </form>
+            <div class="real__out" aria-live="polite">
+              <p class="real__ans" id="real-ans">A resposta aparece aqui.</p>
+              <ol class="real__src" id="real-src"></ol>
+            </div>
+          </div>
+        </div>
+        <p class="demo__note demo__note--local" id="local-dica">Para usar com IA de verdade, rode o Fio no seu computador: o texto não sai da sua máquina. Passo a passo no <a href="https://github.com/Gabrielmachado01gg/fio#rodar-localmente" rel="noopener">README</a>.</p>
+      </div>
+    </section>
+
+    <section class="faq wrap" id="perguntas" aria-labelledby="faq-t">
+      <h2 id="faq-t" class="h2 display">Perguntas frequentes</h2>
+      <div class="faq__list">
+        <details>
+          <summary>O Fio pode errar?</summary>
+          <p>Pode. Por isso toda resposta mostra a página de origem. Confira o trecho antes de tomar decisões importantes.</p>
+        </details>
+        <details>
+          <summary>Que tipos de arquivo funcionam?</summary>
+          <p>PDF, DOCX, TXT e Markdown, além de e-mails colados como texto. PDFs escaneados precisam de texto reconhecível.</p>
+        </details>
+        <details>
+          <summary>Meus documentos treinam algum modelo?</summary>
+          <p>Não. Os arquivos servem só para responder às suas perguntas e podem ser apagados quando você quiser.</p>
+        </details>
+        <details>
+          <summary>Este produto existe de verdade?</summary>
+          <p>Não. O Fio é um projeto de demonstração criado por Gabriel Wiedenhoft para treinar interface, acessibilidade e animação no navegador.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="cta wrap" aria-labelledby="cta-t">
+      <h2 id="cta-t" class="display cta__h">Um documento por vez, sem decorar nada.</h2>
+      <a class="btn btn--solid btn--lg" href="#teste">Experimentar</a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__in">
+      <p>Fio é um projeto de demonstração. Feito por Gabriel Wiedenhoft.</p>
+      <p><a href="https://github.com/Gabrielmachado01gg" rel="noopener">GitHub</a></p>
+    </div>
+  </footer>
+
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
